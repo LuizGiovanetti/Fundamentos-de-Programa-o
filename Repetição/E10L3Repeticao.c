@@ -1,9 +1,16 @@
+/*
+10) Ler dois números que representam os limites de um intervalo. Validar a entrada, o usuário deverá fornecer
+valores positivos. Mostrar o intervalo em ordem crescente.
+a) Mostrar os números primos desse intervalo, com cinco números por linha.
+b) Calcular a média dos múltiplos de 3 e de 7 desse intervalo. Validar para que não seja realizada uma divisão
+por zero.
+*/
 #include <stdio.h>
 
 int main()
 {
     char opcao;
-    int numMenor, numMaior, i, j, contPrimos, divisores, linha;
+    int numMenor, numMaior, i, j, contPrimos, divisores;
 
     do
     {
@@ -26,16 +33,9 @@ int main()
             {
                 printf("Valor invalido.\n");
             }
+
         }while(numMenor>=numMaior);
-        do
-        {
-            printf("Informe quantos numeros deseja imprimir por linha: ");
-            scanf("%d", &linha);
-            if(0>=linha)
-            {
-                printf("Valor invalido.\n");
-            }
-        }while(0>=linha);
+
         i=2;
         contPrimos=0;
         do
@@ -54,7 +54,7 @@ int main()
                 printf("%d\t", i);
                 contPrimos++;
 
-                if(contPrimos%linha==0)
+                if(contPrimos%5==0)
                 {
                     printf("\n");
                 }
@@ -66,7 +66,7 @@ int main()
 
         do
         {
-            printf("\nDeseja repetir o programa? [S/n] [N/n] ");
+            printf("Deseja repetir o programa? [S/n] [N/n] ");
             fflush(stdin);
             scanf("%c", &opcao);
             if(opcao!='S' && opcao !='s' && opcao !='n' && opcao != 'N')
